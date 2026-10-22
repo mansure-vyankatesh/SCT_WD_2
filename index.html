@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131f">
+  <meta name="description" content="A clean, responsive stopwatch with lap tracking.">
+  <title>Chrono — Stopwatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Chrono home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>chrono<span class="brand-dot">.</span></span>
+    </a>
+    <div class="topbar-note"><span class="live-dot"></span> PRECISION TIMEKEEPING</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">FOCUS ON EVERY SECOND</p>
+      <h1>Every moment,<br><span>measured.</span></h1>
+      <p class="intro-copy">A simple, precise stopwatch for your workouts, study sessions, experiments, and everything in between.</p>
+      <div class="feature-row">
+        <div class="feature-icon" aria-hidden="true">↗</div>
+        <div><strong>Track your pace</strong><small>Record laps as you go</small></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon" aria-hidden="true">◷</div>
+        <div><strong>Stay in control</strong><small>Start, pause, and reset anytime</small></div>
+      </div>
+      <div class="intro-footer">BUILT FOR YOUR NEXT PERSONAL BEST</div>
+    </section>
+
+    <section class="stopwatch-card" aria-labelledby="timer-heading">
+      <div class="card-top">
+        <div>
+          <p class="card-kicker">YOUR STOPWATCH</p>
+          <h2 id="timer-heading">Timer</h2>
+        </div>
+        <div class="status-pill" id="status-pill"><span class="status-indicator"></span><span id="status-text">Ready</span></div>
+      </div>
+
+      <div class="timer-face" aria-live="off">
+        <div class="timer-ring ring-back"></div>
+        <div class="timer-ring ring-front"></div>
+        <div class="timer-readout" id="timer" role="timer" aria-label="Elapsed time">00:00<span class="milliseconds">.00</span></div>
+        <p class="timer-caption">MINUTES : SECONDS <span>·</span> HUNDREDTHS</p>
+      </div>
+
+      <div class="controls">
+        <button class="button button-primary" id="start-pause" type="button"><span class="button-icon" id="primary-icon">▶</span><span id="primary-label">Start</span></button>
+        <button class="button button-secondary" id="lap-button" type="button" disabled><span class="button-icon">◎</span>Lap</button>
+        <button class="button button-reset" id="reset-button" type="button" disabled aria-label="Reset stopwatch">↻</button>
+      </div>
+
+      <div class="laps-section">
+        <div class="laps-heading">
+          <div><h3>Lap times</h3><span class="lap-subtitle" id="lap-count">No laps recorded</span></div>
+          <button class="clear-button" id="clear-laps" type="button" disabled>Clear all</button>
+        </div>
+        <div class="laps-list" id="laps-list">
+          <div class="empty-state" id="empty-state">
+            <span class="empty-icon">◷</span>
+            <p>Your laps will appear here</p>
+            <small>Start the timer, then tap Lap.</small>
+          </div>
+        </div>
+        <div class="laps-footer"><span>CHRONO / 001</span><span>TIME IS YOURS</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span>© <span id="year"></span> CHRONO</span>
+    <span>MADE TO KEEP YOU MOVING</span>
+  </footer>
+</body>
+</html>
